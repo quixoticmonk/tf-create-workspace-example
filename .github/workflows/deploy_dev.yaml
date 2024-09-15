@@ -17,6 +17,9 @@ on:
 
 jobs:
     deploy:
+        permissions:
+            id-token: write
+            contents: read
         uses: ./.github/workflows/deployment_template.yaml
         with:
             environment: dev
