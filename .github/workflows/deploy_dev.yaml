@@ -1,0 +1,26 @@
+---
+name: Dev deployment
+on:
+    pull_request:
+        paths-ignore:
+            - README.md
+            - "images/**"
+        branches:
+            main
+    push:
+        paths-ignore:
+            - README.md
+            - "images/**"
+        branches:
+            main
+    workflow_dispatch:
+
+jobs:
+    deploy:
+        uses: ./.github/workflows/deployment_template.yaml
+        with:
+            environment: dev
+            step_name: apply
+        secrets:
+            git_role: ${{ secrets.IAM_ROLE }}
+            tf_token: ${{secrets.TF_TOKEN}}
