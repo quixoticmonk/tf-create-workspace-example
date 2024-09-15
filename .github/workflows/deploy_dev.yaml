@@ -25,4 +25,5 @@ jobs:
             environment: dev
             step_name: apply
         secrets:
+            git_role: ${{secrets.GIT_ROLE}}
             tf_token: ${{secrets.TF_TOKEN}}
