@@ -4,5 +4,5 @@ variable "aws_region" {
 
 variable "bucket_name" {
   type    = string
-  default = "manuch-2024-date"
+  default = "manuchn-2024"
 }
